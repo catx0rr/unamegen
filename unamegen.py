@@ -45,7 +45,7 @@ def main():
     parser.add_argument('-n', '--name', type=str, help="A single name to process (format: 'First Last')")
     parser.add_argument('-f', '--file', type=str, help="A file containing multiple names (each on a new line)")
     parser.add_argument('-d', '--domain', type=str, help="Optional domain to append for email format")
-    parser.add_argument('-i', '--iteration', type=int, help="Number of iterations for common name formats")
+    parser.add_argument('-i', '--iterations', type=int, help="Number of iterations for common name formats")
     parser.add_argument('-o', '--output', type=str, default='wordlist.txt', help="Output file name (default: wordlist.txt)")
 
     args = parser.parse_args()
@@ -62,7 +62,7 @@ def main():
         print("Please provide a name or a file with names.")
         return
 
-    wordlist = generate_wordlist(names, args.domain, args.iteration)
+    wordlist = generate_wordlist(names, args.domain, args.iterations)
     write_to_file(wordlist, args.output)
     print(f"Wordlist generated successfully and saved to {args.output}!")
 
