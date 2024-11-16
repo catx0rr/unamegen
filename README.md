@@ -51,6 +51,11 @@ Generate the same wordlist for usernames or emails
 python unamegen.py --name "John Doe" --domain yoooh.com --iterations 2 --output mywordlist.txt
 ```
 
+## Using names file in generating emails
+```
+DOMAIN='domain.com'; NAMESFILE='samplenames.txt'; names=(); while IFS= read -r l; do names+=("$l"); done < ${NAMESFILE} && for x in ${names[@]}; do python3 unamegen.py -n $x -d ${DOMAIN} -o emails_${DOMAIN}; done
+``` 
+
 ## Command-Line Options
 - `-n`, `--name`: A single name to process (format: "First Last").
 - `-f`, `--file`: A file containing multiple names (each on a new line).
