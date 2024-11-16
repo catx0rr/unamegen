@@ -1,6 +1,11 @@
-# Username and Email Wordlist Generator
+## Username and Email Wordlist Generator
 
 This Python script generates a wordlist of potential usernames and email addresses based on provided names. You can input a single name or a file containing multiple names, and optionally specify a domain to format the output as email addresses.
+
+## Originally forked from [hac01/uwg](https://github.com/hac01/uwg)
+
+- Added new iterations (since common usernames sometimes have '2' i.e. jsmith2)
+- Append usage instead of write so the script can be used in bash for loops
 
 ## Features
 
